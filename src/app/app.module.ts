@@ -8,8 +8,8 @@ import {NavbarComponent} from './navbar/navbar.component';
 import {ProductItemComponent} from './product-item/product-item.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {SearchComponent} from './search/search.component';
-import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import {routing} from './app.routing';
 
 @NgModule({
   declarations: [
@@ -22,10 +22,7 @@ import {FormsModule} from '@angular/forms';
     SearchComponent
   ],
   imports: [
-    RouterModule.forRoot([
-      {path: '', component: HomeComponent},
-      {path: 'products/:productId', component: ProductDetailComponent}
-    ]),
+    routing,
     BrowserModule,
     FormsModule
   ],
