@@ -10,6 +10,7 @@ import {ProductDetailComponent} from './product-detail/product-detail.component'
 import {SearchComponent} from './search/search.component';
 import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {routing} from './app.routing';
   imports: [
     routing,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

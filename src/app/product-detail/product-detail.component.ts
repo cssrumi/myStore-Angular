@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ProductService} from '..//shared/product.service';
+import {Product} from '..//shared/product';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.css']
+  styleUrls: ['./product-detail.component.css'],
+  providers: [ProductService]
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  product: Product;
+
+  constructor(private route: ActivatedRoute, private productService: ProductService) {}
 
   ngOnInit() {
+    const prodId: number = parseInt(this.route.snapshot.params[`productId`], 10);
+    this.product = this.productService.getProductById(prodId);
   }
-
 }
